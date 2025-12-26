@@ -32,7 +32,7 @@ class SymptomsTrackerViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var mainStackView: UIStackView!
 
-    @IBOutlet weak var searchBar: UISearchBar!
+//    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var historyButton: UIButton!
 
     @IBOutlet weak var calendarCollectionView: UICollectionView!
@@ -95,7 +95,7 @@ class SymptomsTrackerViewController: UIViewController, UITableViewDelegate {
         private func setupUI() {
             view.backgroundColor = .systemBackground
 
-            searchBar.placeholder = "Search symptoms"
+//            searchBar.placeholder = "Search symptoms"
 
             emptyImageView.image = UIImage(systemName: "figure.and.child.holdinghands")
             emptyImageView.tintColor = .systemPink
