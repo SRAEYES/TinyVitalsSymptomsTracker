@@ -55,6 +55,9 @@
                                             <color key="tintColor" red="0.92941176470588238" green="0.4392156862745098" blue="0.59999999999999998" alpha="0.63749482619999998" colorSpace="custom" customColorSpace="displayP3"/>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" title="History"/>
+                                            <connections>
+                                                <action selector="historyTapped:" destination="-1" eventType="touchUpInside" id="sQ0-CH-I6x"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>

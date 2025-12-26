@@ -114,7 +114,7 @@ class SymptomsTrackerViewController: UIViewController, UITableViewDelegate {
 
         let fever = SymptomTimelineItem(
             title: "Fever",
-            description: "High body temperature detected",
+            description: "High temperature",
             time: "09:15 AM",
             color: .systemRed,
             iconName: "thermometer"
@@ -122,7 +122,7 @@ class SymptomsTrackerViewController: UIViewController, UITableViewDelegate {
 
         let cold = SymptomTimelineItem(
             title: "Cold & Cough",
-            description: "Mild cough and runny nose",
+            description: "Runny nose",
             time: "02:40 PM",
             color: .systemBlue,
             iconName: "wind"
@@ -219,6 +219,20 @@ class SymptomsTrackerViewController: UIViewController, UITableViewDelegate {
 
         timelineTableView.reloadData()
     }
+    
+    @IBAction func historyTapped(_ sender: UIButton) {
+        let vc = SymptomsHistoryViewController(
+            nibName: "SymptomsHistoryViewController",
+            bundle: nil
+        )
+
+        vc.timelineDataByDate = self.timelineDataByDate
+
+        let nav = UINavigationController(rootViewController: vc)
+        present(nav, animated: true)
+    }
+
+    
 }
 
 
