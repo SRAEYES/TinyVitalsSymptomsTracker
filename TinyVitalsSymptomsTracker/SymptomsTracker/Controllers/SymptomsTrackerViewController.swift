@@ -81,7 +81,14 @@ class SymptomsTrackerViewController: UIViewController, UITableViewDelegate {
             timelineTableView.estimatedRowHeight = 120
             
             calendarCollectionView.allowsMultipleSelection = false
-
+            
+            navigationItem.rightBarButtonItem = UIBarButtonItem(
+                title: "Export",
+                style: .plain,
+                target: self,
+                action: #selector(exportPDF)
+            )
+            
 
         }
 
@@ -231,7 +238,36 @@ class SymptomsTrackerViewController: UIViewController, UITableViewDelegate {
         let nav = UINavigationController(rootViewController: vc)
         present(nav, animated: true)
     }
+    
+    
+    @objc private func exportPDF() {
 
+        guard let pdfURL = SymptomsPDFExporter.generatePDF(
+            from: timelineDataByDate,
+            calendar: calendar
+        ) else { return }
+
+        let activityVC = UIActivityViewController(
+            activityItems: [pdfURL],
+            applicationActivities: nil
+        )
+
+        present(activityVC, animated: true)
+    }
+
+    @IBAction func doctorTapped(_ sender: UIButton) {
+        let vc = DoctorSymptomsViewController(
+            nibName: "DoctorSymptomsViewController",
+            bundle: nil
+        )
+
+        // Pass full history (NOT just selected date)
+        vc.symptomsByDate = timelineDataByDate
+
+        navigationController?.pushViewController(vc, animated: true)
+    }
+
+    
     
 }
 

@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -41,9 +42,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="60"/>
                                     <subviews>
                                         <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="rEf-5g-Rwy" userLabel="searchBar">
-                                            <rect key="frame" x="20" y="0.0" width="280" height="60"/>
+                                            <rect key="frame" x="20" y="0.0" width="220" height="60"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="280" id="Ivy-hz-BoP"/>
+                                                <constraint firstAttribute="width" constant="220" id="Ivy-hz-BoP"/>
                                             </constraints>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
@@ -51,12 +52,24 @@
                                             </connections>
                                         </searchBar>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zOC-rC-q6f" userLabel="historyButton">
-                                            <rect key="frame" x="304.33333333333331" y="13" width="78.666666666666686" height="34.333333333333336"/>
-                                            <color key="tintColor" red="0.92941176470588238" green="0.4392156862745098" blue="0.59999999999999998" alpha="0.63749482619999998" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <rect key="frame" x="275" y="13" width="50.666666666666686" height="34.333333333333336"/>
+                                            <color key="tintColor" red="0.92941176470588238" green="0.4392156862745098" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <state key="normal" title="Button"/>
-                                            <buttonConfiguration key="configuration" style="plain" title="History"/>
+                                            <buttonConfiguration key="configuration" style="plain" image="calendar" catalog="system"/>
                                             <connections>
                                                 <action selector="historyTapped:" destination="-1" eventType="touchUpInside" id="sQ0-CH-I6x"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="thh-bV-Rht">
+                                            <rect key="frame" x="326.33333333333331" y="13" width="50.666666666666686" height="34.333333333333336"/>
+                                            <color key="tintColor" red="0.92941176469999998" green="0.43921568630000002" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" imagePlacement="trailing">
+                                                <imageReference key="image" image="stethoscope.circle" catalog="system" symbolScale="large"/>
+                                                <preferredSymbolConfiguration key="preferredSymbolConfigurationForImage" scale="large" weight="bold"/>
+                                            </buttonConfiguration>
+                                            <connections>
+                                                <action selector="doctorTapped:" destination="-1" eventType="touchUpInside" id="KnQ-OJ-X3L"/>
                                             </connections>
                                         </button>
                                     </subviews>
@@ -65,9 +78,11 @@
                                         <constraint firstItem="rEf-5g-Rwy" firstAttribute="leading" secondItem="EB4-7N-rO8" secondAttribute="leading" constant="20" id="4Yg-f9-E2h"/>
                                         <constraint firstItem="rEf-5g-Rwy" firstAttribute="top" secondItem="EB4-7N-rO8" secondAttribute="top" id="65j-be-hz0"/>
                                         <constraint firstAttribute="height" constant="60" id="8sy-Nu-a5s"/>
+                                        <constraint firstItem="zOC-rC-q6f" firstAttribute="leading" secondItem="rEf-5g-Rwy" secondAttribute="trailing" constant="35" id="I3m-Ey-a5Q"/>
                                         <constraint firstAttribute="bottom" secondItem="rEf-5g-Rwy" secondAttribute="bottom" id="KXF-11-Im0"/>
                                         <constraint firstItem="zOC-rC-q6f" firstAttribute="centerY" secondItem="EB4-7N-rO8" secondAttribute="centerY" id="OjD-Tg-1SH"/>
-                                        <constraint firstAttribute="trailing" secondItem="zOC-rC-q6f" secondAttribute="trailing" constant="10" id="qxw-tb-uho"/>
+                                        <constraint firstAttribute="trailing" secondItem="thh-bV-Rht" secondAttribute="trailing" constant="16" id="mgI-ne-isr"/>
+                                        <constraint firstItem="thh-bV-Rht" firstAttribute="centerY" secondItem="zOC-rC-q6f" secondAttribute="centerY" id="vhW-DB-acN"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lIC-eq-qPP" userLabel="calendarContainerView">
@@ -204,7 +219,9 @@
         </view>
     </objects>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="107"/>
         <image name="plus.circle" catalog="system" width="128" height="123"/>
+        <image name="stethoscope.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

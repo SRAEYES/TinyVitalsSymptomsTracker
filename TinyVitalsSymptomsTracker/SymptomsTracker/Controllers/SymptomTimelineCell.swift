@@ -20,7 +20,7 @@ class SymptomTimelineCell: UITableViewCell {
        @IBOutlet weak var bottomLineHeight: NSLayoutConstraint!
 
     
-    @IBOutlet weak var cardView: UIView!
+//    @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var iconImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -32,8 +32,8 @@ class SymptomTimelineCell: UITableViewCell {
             selectionStyle = .none
 
             // Card appearance
-            cardView.layer.cornerRadius = 16
-            cardView.layer.masksToBounds = true
+//            cardView.layer.cornerRadius = 16
+//            cardView.layer.masksToBounds = true
 
             // Icon polish
             iconImageView.contentMode = .scaleAspectFit
@@ -56,7 +56,7 @@ class SymptomTimelineCell: UITableViewCell {
             titleLabel.text = item.title
             descriptionLabel.text = item.description
 
-            cardView.backgroundColor = item.color.withAlphaComponent(0.15)
+//            cardView.backgroundColor = item.color.withAlphaComponent(0.15)
 
             iconImageView.image = UIImage(systemName: item.iconName)
             iconImageView.tintColor = item.color
