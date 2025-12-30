@@ -111,13 +111,13 @@ final class LogSymptomsViewController: UIViewController {
         selectedDate = sender.date
     }
 
-    @IBAction func selectSymptomsTapped(_ sender: UIButton) {
-        // Mock selection
-        selectedSymptoms = sampleSymptoms
-
-        symptomsPreviewLabel.textColor = .label
-        symptomsPreviewLabel.text = selectedSymptoms.joined(separator: ", ")
-    }
+//    @IBAction func selectSymptomsTapped(_ sender: UIButton) {
+//        // Mock selection
+//        selectedSymptoms = sampleSymptoms
+//
+//        symptomsPreviewLabel.textColor = .label
+//        symptomsPreviewLabel.text = selectedSymptoms.joined(separator: ", ")
+//    }
 
     @IBAction func heightTapped(_ sender: UIButton) {
         showSampleAlert(
@@ -163,6 +163,24 @@ final class LogSymptomsViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .default))
         present(alert, animated: true)
     }
+    
+    @IBAction func selectSymptomsTapped(_ sender: UIButton) {
+
+        let vc = SymptomsSelectionViewController(
+            nibName: "SymptomsSelectionViewController",
+            bundle: nil
+        )
+
+        vc.onApply = { selected in
+            let names = selected.map { $0.title }
+            self.symptomsPreviewLabel.text = names.joined(separator: ", ")
+            self.symptomsPreviewLabel.textColor = .label
+        }
+
+        vc.modalPresentationStyle = .pageSheet
+        present(vc, animated: true)
+    }
+
 
     // MARK: - Helpers
     private func showSampleAlert(
