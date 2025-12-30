@@ -137,7 +137,7 @@
                                             </connections>
                                         </button>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image 1" translatesAutoresizingMaskIntoConstraints="NO" id="dru-iT-vav">
-                                            <rect key="frame" x="237.66666666666663" y="10" width="40" height="40"/>
+                                            <rect key="frame" x="232.66666666666666" y="10" width="39.999999999999972" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="40" id="9uM-pW-ZSP"/>
                                                 <constraint firstAttribute="height" constant="40" id="sUg-1p-CJQ"/>
@@ -187,7 +187,7 @@
                                         <constraint firstItem="jpH-ui-g79" firstAttribute="leading" secondItem="IsK-FM-dNF" secondAttribute="trailing" id="bxY-Wx-gpA"/>
                                         <constraint firstItem="IsK-FM-dNF" firstAttribute="top" secondItem="jj8-tx-DAv" secondAttribute="top" constant="10" id="fok-9K-Rdf"/>
                                         <constraint firstItem="tHA-cm-bhO" firstAttribute="top" secondItem="jpH-ui-g79" secondAttribute="bottom" constant="26" id="fsc-4k-8tv"/>
-                                        <constraint firstItem="anr-Fc-tyW" firstAttribute="leading" secondItem="dru-iT-vav" secondAttribute="trailing" id="iEl-5W-mJJ"/>
+                                        <constraint firstItem="anr-Fc-tyW" firstAttribute="leading" secondItem="dru-iT-vav" secondAttribute="trailing" constant="5" id="iEl-5W-mJJ"/>
                                         <constraint firstItem="anr-Fc-tyW" firstAttribute="top" secondItem="jj8-tx-DAv" secondAttribute="top" constant="14" id="nRr-jD-DQQ"/>
                                         <constraint firstItem="IsK-FM-dNF" firstAttribute="leading" secondItem="jj8-tx-DAv" secondAttribute="leading" constant="20" id="z06-Qs-tBl"/>
                                     </constraints>
@@ -306,8 +306,8 @@
         </view>
     </objects>
     <resources>
-        <image name="Image" width="500" height="500"/>
-        <image name="Image 1" width="980" height="980"/>
+        <image name="Image" width="499" height="499"/>
+        <image name="Image 1" width="500" height="500"/>
         <image name="Image 2" width="512" height="512"/>
         <image name="chevron.right" catalog="system" width="97" height="128"/>
         <image name="plus.circle" catalog="system" width="128" height="123"/>
