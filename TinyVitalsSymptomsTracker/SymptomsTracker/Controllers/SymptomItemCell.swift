@@ -40,7 +40,7 @@ final class SymptomItemCell: UICollectionViewCell {
             iconImageView.tintColor = .systemPink
         } else {
             // ✅ Unselected style (soft grey)
-            contentView.backgroundColor = UIColor.systemGray6
+            contentView.backgroundColor = UIColor.systemGray5
             titleLabel.textColor = .label
             iconImageView.tintColor = item.tintColor
         }
